@@ -36,6 +36,7 @@ const Blog = ({ posts }) => {
         {mappedPosts &&
           mappedPosts.length &&
           mappedPosts.map((post, index) => (
+
             <PostCard data={post} key={index} />
           ))}
       </div>

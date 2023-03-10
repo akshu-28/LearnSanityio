@@ -1,26 +1,33 @@
 import 'package:contacts/config.dart';
-import 'package:contacts/ui/screens/binaryTree.dart';
+import 'package:contacts/ui/screens/registration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sanity/flutter_sanity.dart';
+
+final sanityClient = SanityClient(
+    projectId: "os8rkoc3",
+    dataset: "production",
+    token:
+        "skROuL5AKgvCL4T7imvHYgdIamfpg1YkzqJkbNMv0z9sKRuqvB1fYxXu2U9BxHWubEOHgwvd9HaUe8FN6lxt6YxF95VSfnhi7jJnkMQ7dhkKRWaKUlpJYD2l6pG5kqot9eURQfqIsbgELciRTn41yR9egsVgs1xc4B7WBcYL9tW1cOx1NsfN",
+    useCdn: false);
 
 void main() async {
   runApp(const MyApp(Key("myapp")));
   WidgetsFlutterBinding.ensureInitialized();
 
-  final sanityClient = SanityClient(
+/*   final sanityClient = SanityClient(
     dataset: 'production',
     projectId: 'u65tray5',
   );
 
-  final post ={
-  'name': 'My First Post',
-  'body': 'Hello, world!',
-};
+  final post = {
+    'name': 'My First Post',
+    'body': 'Hello, world!',
+  };
 
   final response =
-      await sanityClient.fetch('*[_type == "pet"]');
+      await sanityClient.fetch('*[_type == "pet" && name match "ICICI*"]');
 
-  print(response);
+  print(response); */
 
   //await currentTheme.retrieveBooleanValue();
 }
@@ -66,11 +73,7 @@ class _MyAppState extends State<MyApp> {
         primaryColor: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const BinaryTree(),
-      /*  home: BlocProvider(
-          create: (context) => ContactsBloc()..add(FetchContacts()),
-          child: const ContactList(),
-        ) */
+      home: const Registration(),
     );
   }
 }

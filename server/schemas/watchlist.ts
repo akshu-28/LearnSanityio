@@ -8,6 +8,11 @@ export default defineType({
         name: 'symbolName',
         title: 'Symbol',
         type: 'string',
+    }),
+    defineField({
+        name: 'cmpyName',
+        title: 'CompanyName',
+        type: 'string',
     }), defineField({
         name: 'ltp',
         title: 'Ltp',

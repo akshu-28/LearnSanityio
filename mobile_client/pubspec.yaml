@@ -46,6 +46,8 @@ dependencies:
   syncfusion_flutter_pdf: ^20.1.59-beta
   binary_tree: ^1.0.5
   flutter_sanity: ^1.1.0
+  fluttertoast: ^8.2.1
+  flutter_sanity_image_url: ^0.0.3
   
   
   

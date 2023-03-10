@@ -12,6 +12,8 @@ const PostCard = (props) => {
     post.mainImage
   );
 
+  console.log(imageProps);
+
 
   return (
     <div className="col-lg-4">

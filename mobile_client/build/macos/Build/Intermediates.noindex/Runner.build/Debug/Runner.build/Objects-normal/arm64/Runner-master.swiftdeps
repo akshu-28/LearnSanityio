@@ -1,8 +1,0 @@
-version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
-options: "5e5ef89b356dcfde5afac70c860e6b6ad191bddb5b3cb24919c15bdab46ad9ba"
-build_start_time: [1678423178, 438127040]
-build_end_time: [1678423195, 657605171]
-inputs:
-  "/Users/akshayas/Desktop/sanitylearn/mobile_client/macos/Flutter/GeneratedPluginRegistrant.swift": [1678423156, 300399303]
-  "/Users/akshayas/Desktop/sanitylearn/mobile_client/macos/Runner/AppDelegate.swift": [1654600138, 135043621]
-  "/Users/akshayas/Desktop/sanitylearn/mobile_client/macos/Runner/MainFlutterWindow.swift": [1654600138, 136347770]

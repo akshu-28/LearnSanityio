@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 // import imageUrlBuilder from "@sanity/image-url";
 import create from "@sanity/client";
@@ -59,52 +60,29 @@ export const getServerSideProps = async (context) => {
     };
 
     const client = create(config);
-
-
-
-
-    //--------------------
-    /*     try {
-    
-            await client
-                .create({
-                    _type: "watchlist",
-                    symbolName: "Akshu",
-                    ltp: "130.71",
-                    cp: "0.57%",
-                    change: "+0.74",
-                })
-                .then((res) => {
-                    console.log(`Todo was created, document ID is ${res._id}`);
-                });
-    
-        } catch (err) {
-            console.error(err);
-            res.status(500).json({ msg: "Error, check console" });
-        } */
-    //---------------
-    const data = await client
-        .fetch('*[ _type == "watchlist" ]')
-        ;
-    /*  const data = await fetch(url).then((res) => res.json());
-     const posts = data.result;
-     console.log(posts[0]["body"]); */
-    console.log(data);
-    const posts = data;
-
-    if (!posts || !posts.length === 0) {
-        return {
-            props: {
-                posts: [],
+    //-----------------------
+    const response = await axios.post(
+        'https://os8rkoc3.api.sanity.io/v1/auth/token',
+        {
+            email: "email",
+            password: "password",
+        },
+        {
+            headers: {
+                'Content-Type': 'application/json',
             },
-        };
+        }
+    );
+
+    if (response.status === 200) {
+        const accessToken = response.data.accessToken;
+        return accessToken;
     } else {
-        return {
-            props: {
-                posts,
-            },
-        };
+        throw new Error('Failed to login');
     }
+
+
+
 };
 
 export default Watchlist;

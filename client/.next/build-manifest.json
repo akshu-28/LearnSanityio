@@ -28,11 +28,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/blog.js"
-    ],
-    "/watchlist": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/watchlist.js"
     ]
   },
   "ampFirstPages": []
