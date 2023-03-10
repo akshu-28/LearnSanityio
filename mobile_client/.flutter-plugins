@@ -2,6 +2,9 @@
 file_picker=/Users/akshayas/.pub-cache/hosted/pub.dev/file_picker-3.0.4/
 flutter_plugin_android_lifecycle=/Users/akshayas/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.7/
 fluttertoast=/Users/akshayas/.pub-cache/hosted/pub.dev/fluttertoast-8.2.1/
+path_provider=/Users/akshayas/.pub-cache/hosted/pub.dev/path_provider-2.0.13/
+path_provider_android=/Users/akshayas/.pub-cache/hosted/pub.dev/path_provider_android-2.0.24/
+path_provider_foundation=/Users/akshayas/.pub-cache/hosted/pub.dev/path_provider_foundation-2.1.3/
 path_provider_linux=/Users/akshayas/.pub-cache/hosted/pub.dev/path_provider_linux-2.1.7/
 path_provider_windows=/Users/akshayas/.pub-cache/hosted/pub.dev/path_provider_windows-2.1.3/
 shared_preferences=/Users/akshayas/.pub-cache/hosted/pub.dev/shared_preferences-2.0.17/

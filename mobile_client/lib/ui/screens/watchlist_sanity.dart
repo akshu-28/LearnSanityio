@@ -1,7 +1,5 @@
-import 'package:contacts/ui/screens/registration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sanity/flutter_sanity.dart';
-import 'package:flutter_sanity_image_url/flutter_sanity_image_url.dart';
 
 class Watchlist extends StatefulWidget {
   const Watchlist({Key? key}) : super(key: key);
@@ -18,21 +16,13 @@ class _WatchlistState extends State<Watchlist> {
       token:
           "skROuL5AKgvCL4T7imvHYgdIamfpg1YkzqJkbNMv0z9sKRuqvB1fYxXu2U9BxHWubEOHgwvd9HaUe8FN6lxt6YxF95VSfnhi7jJnkMQ7dhkKRWaKUlpJYD2l6pG5kqot9eURQfqIsbgELciRTn41yR9egsVgs1xc4B7WBcYL9tW1cOx1NsfN",
       useCdn: false);
-  var picture;
 
   @override
   void initState() {
     initSanity();
-    //loginUser();
 
-    /*    var query = Uri.encodeComponent('*[ _type == "post" ]"');
-    var url =
-        'https://os8rkoc3.api.sanity.io/v2021-06-07/data/query/production?query=$query}';
-    print(url); */
     super.initState();
   }
-
- 
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +49,7 @@ class _WatchlistState extends State<Watchlist> {
                           borderRadius:
                               const BorderRadius.all(Radius.circular(10))),
                       padding: const EdgeInsets.all(10),
+                      margin: const EdgeInsets.symmetric(vertical: 5),
                       child: Column(
                         children: [
                           Row(
