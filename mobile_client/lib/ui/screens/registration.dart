@@ -3,11 +3,7 @@ import 'dart:io';
 import 'package:contacts/main.dart';
 import 'package:contacts/ui/screens/watchlist_sanity.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sanity_image_url/flutter_sanity_image_url.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:http/http.dart' as http;
-import 'package:path_provider/path_provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Registration extends StatefulWidget {
   const Registration({Key? key}) : super(key: key);
@@ -19,63 +15,7 @@ class Registration extends StatefulWidget {
 class _RegistrationState extends State<Registration> {
   @override
   void initState() {
-    getLoginbanner();
     super.initState();
-  }
-
-  final builder = ImageUrlBuilder(sanityClient);
-
-  ImageUrlBuilder urlFor(asset) {
-    return builder.image(asset);
-  }
-
-  var picture;
-  getLoginbanner() async {
-    WidgetsBinding.instance.addPostFrameCallback(
-      (timeStamp) async {
-        await getlocalloginbanner();
-
-        if (filePath == "") {
-          LoaderWidget().showLoader(context, text: "Loading");
-          final response = await sanityClient.fetch('*[_type == "loginui"]');
-
-          var picture = SanityImage.fromJson(response[0]["loginbanner"]);
-
-          var imgRes =
-              await http.get(Uri.parse(urlFor(picture).size(200, 200).url()));
-          filePath = await _saveImage(imgRes.bodyBytes);
-
-          await saveloginbanner(filePath);
-          await getlocalloginbanner();
-          LoaderWidget().showLoader(context, stopLoader: true);
-        }
-      },
-    );
-  }
-
-  String filePath = "";
-  _saveImage(List<int> imageBytes) async {
-    var directory = await getExternalStorageDirectory();
-    var localPath = directory!.path;
-    var fileName = urlFor(picture).size(200, 200).url().split('/').last;
-    filePath = '$localPath/$fileName';
-
-    File file = File(filePath);
-    await file.writeAsBytes(imageBytes);
-
-    return filePath;
-  }
-
-  Future<void> saveloginbanner(String value) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString('loginfilePath', filePath);
-  }
-
-  Future<void> getlocalloginbanner() async {
-    final prefs = await SharedPreferences.getInstance();
-
-    filePath = prefs.getString('loginfilePath') ?? "";
-    setState(() {});
   }
 
   initSanity(String username, String passwords) async {
@@ -105,22 +45,30 @@ class _RegistrationState extends State<Registration> {
         height: MediaQuery.of(context).size.height,
         child: Stack(
           children: [
-            if (filePath != "")
-              Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: FileImage(File(filePath)),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+            ValueListenableBuilder<String>(
+                valueListenable: filePath,
+                builder: (context, value, _) {
+                  WidgetsBinding.instance.addPostFrameCallback(
+                    (timeStamp) {
+                      setState(() {});
+                    },
+                  );
+                  return Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: FileImage(File(value)),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  );
+                }),
             /*  Image.network(
                 urlFor(picture).size(200, 200).url(),
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 fit: BoxFit.fill,
               ), */
-            if (filePath != "")
+            if (filePath.value != "")
               Center(
                 child: Padding(
                   padding:
