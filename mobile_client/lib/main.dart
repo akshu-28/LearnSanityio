@@ -79,30 +79,36 @@ class _MyAppState extends State<MyApp> {
   getLoginbanner() async {
     WidgetsBinding.instance.addPostFrameCallback(
       (timeStamp) async {
+        //  await getlocalloginbanner();
+
+        // if (filePath.value == "") {
+        await saveloginbanner("");
+        final response = await sanityClient.fetch('*[_type == "loginui"]');
+
+        var picture = SanityImage.fromJson(response[0]["loginbanner"]);
+        setState(() {});
+        print(urlFor(picture).size(200, 200).url());
+        var imgRes =
+            await http.get(Uri.parse(urlFor(picture).size(200, 200).url()));
+        filePath = await _saveImage(imgRes.bodyBytes, picture);
+
+        await saveloginbanner(filePath.value);
         await getlocalloginbanner();
-
-        if (filePath.value == "") {
-          final response = await sanityClient.fetch('*[_type == "loginui"]');
-
-          var picture = SanityImage.fromJson(response[0]["loginbanner"]);
-
-          var imgRes =
-              await http.get(Uri.parse(urlFor(picture).size(200, 200).url()));
-          filePath = await _saveImage(imgRes.bodyBytes);
-
-          await saveloginbanner(filePath.value);
-          await getlocalloginbanner();
-        }
+        // }
 
         print("File saved ${filePath.value}");
       },
     );
   }
 
-  _saveImage(List<int> imageBytes) async {
+  Future<String> _getLocalPath() async {
     var directory = await getExternalStorageDirectory();
-    var localPath = directory!.path;
-    var fileName = urlFor(picture).size(200, 200).url().split('/').last;
+    return directory!.path;
+  }
+
+  _saveImage(List<int> imageBytes, var pictures) async {
+    var localPath = await _getLocalPath();
+    var fileName = urlFor(pictures).size(200, 200).url().split('/').last;
     filePath.value = '$localPath/$fileName';
 
     File file = File(filePath.value);
