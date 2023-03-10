@@ -1,0 +1,66 @@
+2023-02-09 15:30:52.976472 >>> {command: get_health}
+2023-02-09 15:30:53.537071 <<< {isError: false, response: {status: ok}, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:53.547406 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: listview, keyValueType: String}
+2023-02-09 15:30:54.714100 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:54.715498 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: datepicker, keyValueType: String}
+2023-02-09 15:30:54.747762 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:54.753769 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: tabbar, keyValueType: String}
+2023-02-09 15:30:54.762767 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:54.766078 >>> {command: scroll, timeout: 20000, finderType: ByValueKey, keyValueString: tabview0, keyValueType: String, dx: 0.0, dy: -1000.0, duration: 300000, frequency: 60}
+2023-02-09 15:30:55.274058 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:55.275056 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: item30, keyValueType: String}
+2023-02-09 15:30:56.319231 <<< {isError: true, response: Timeout while executing waitFor: TimeoutException after 0:00:01.000000: Future not completed
+, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:56.322058 >>> {command: scroll, timeout: 20000, finderType: ByValueKey, keyValueString: tabview0, keyValueType: String, dx: 0.0, dy: -1000.0, duration: 300000, frequency: 60}
+2023-02-09 15:30:56.719111 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:56.720511 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: item30, keyValueType: String}
+2023-02-09 15:30:56.728118 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:56.729853 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: tabbar1, keyValueType: String}
+2023-02-09 15:30:56.737845 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:56.739991 >>> {command: tap, timeout: 30000, finderType: ByValueKey, keyValueString: tabbar1, keyValueType: String}
+2023-02-09 15:30:56.808390 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:56.809220 >>> {command: waitForCondition, timeout: 30000, conditionName: NoTransientCallbacksCondition}
+2023-02-09 15:30:57.150873 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:57.152562 >>> {command: scroll, timeout: 20000, finderType: ByValueKey, keyValueString: tabview1, keyValueType: String, dx: 0.0, dy: -1000.0, duration: 300000, frequency: 60}
+2023-02-09 15:30:57.504954 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:57.506348 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: item30, keyValueType: String}
+2023-02-09 15:30:58.523941 <<< {isError: true, response: Timeout while executing waitFor: TimeoutException after 0:00:01.000000: Future not completed
+, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:58.524770 >>> {command: scroll, timeout: 20000, finderType: ByValueKey, keyValueString: tabview1, keyValueType: String, dx: 0.0, dy: -1000.0, duration: 300000, frequency: 60}
+2023-02-09 15:30:58.940026 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:58.941455 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: item30, keyValueType: String}
+2023-02-09 15:30:58.995424 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-09 15:30:58.998555 >>> {command: tap, timeout: 30000, finderType: ByValueKey, keyValueString: theme, keyValueType: String}
+2023-02-17 10:22:09.149443 >>> {command: get_health}
+2023-02-17 10:22:09.432662 <<< {isError: false, response: {status: ok}, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:09.442117 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: listview, keyValueType: String}
+2023-02-17 10:22:10.193257 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:10.193557 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: datepicker, keyValueType: String}
+2023-02-17 10:22:10.209565 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:10.213529 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: tabbar, keyValueType: String}
+2023-02-17 10:22:10.216167 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:10.218202 >>> {command: scroll, timeout: 20000, finderType: ByValueKey, keyValueString: tabview0, keyValueType: String, dx: 0.0, dy: -1000.0, duration: 300000, frequency: 60}
+2023-02-17 10:22:10.603758 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:10.604826 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: item30, keyValueType: String}
+2023-02-17 10:22:11.627296 <<< {isError: true, response: Timeout while executing waitFor: TimeoutException after 0:00:01.000000: Future not completed
+, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:11.633263 >>> {command: scroll, timeout: 20000, finderType: ByValueKey, keyValueString: tabview0, keyValueType: String, dx: 0.0, dy: -1000.0, duration: 300000, frequency: 60}
+2023-02-17 10:22:11.982158 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:11.982672 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: item30, keyValueType: String}
+2023-02-17 10:22:11.986684 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:11.988648 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: tabbar1, keyValueType: String}
+2023-02-17 10:22:11.993923 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:11.999216 >>> {command: tap, timeout: 30000, finderType: ByValueKey, keyValueString: tabbar1, keyValueType: String}
+2023-02-17 10:22:12.032319 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:12.034920 >>> {command: waitForCondition, timeout: 30000, conditionName: NoTransientCallbacksCondition}
+2023-02-17 10:22:12.389639 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:12.391604 >>> {command: scroll, timeout: 20000, finderType: ByValueKey, keyValueString: tabview1, keyValueType: String, dx: 0.0, dy: -1000.0, duration: 300000, frequency: 60}
+2023-02-17 10:22:12.729337 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:12.730120 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: item30, keyValueType: String}
+2023-02-17 10:22:13.738195 <<< {isError: true, response: Timeout while executing waitFor: TimeoutException after 0:00:01.000000: Future not completed
+, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:13.739145 >>> {command: scroll, timeout: 20000, finderType: ByValueKey, keyValueString: tabview1, keyValueType: String, dx: 0.0, dy: -1000.0, duration: 300000, frequency: 60}
+2023-02-17 10:22:14.083093 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:14.083590 >>> {command: waitFor, timeout: 1000, finderType: ByValueKey, keyValueString: item30, keyValueType: String}
+2023-02-17 10:22:14.086746 <<< {isError: false, response: {}, type: _extensionType, method: ext.flutter.driver}
+2023-02-17 10:22:14.088904 >>> {command: tap, timeout: 30000, finderType: ByValueKey, keyValueString: theme, keyValueType: String}
