@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:contacts/main.dart';
+import 'package:contacts/ui/screens/login_logic.dart';
 import 'package:contacts/ui/screens/watchlist_sanity.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -40,199 +41,193 @@ class _RegistrationState extends State<Registration> {
   Widget build(BuildContext context) {
     return Form(
       key: formKey,
-      child: RefreshIndicator(
+      child: Scaffold(
+          body: RefreshIndicator(
         onRefresh: () async {
-          print("refresh");
-          //return true;
+          Loginlogic().getLoginbanner();
         },
-        child: Scaffold(
-            body: RefreshIndicator(
-          onRefresh: () async {
-            //return true;
-          },
-          child: SingleChildScrollView(
-            physics: const AlwaysScrollableScrollPhysics(),
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height,
-              child: Stack(
-                children: [
-                  ValueListenableBuilder<String>(
-                      valueListenable: filePath,
-                      builder: (context, value, _) {
-                        WidgetsBinding.instance.addPostFrameCallback(
-                          (timeStamp) {
-                            setState(() {});
-                          },
-                        );
-                        return value != ""
-                            ? Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: FileImage(File(value)),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              )
-                            : Container();
-                      }),
-                  /*  Image.network(
-                      urlFor(picture).size(200, 200).url(),
-                      height: MediaQuery.of(context).size.height,
-                      width: MediaQuery.of(context).size.width,
-                      fit: BoxFit.fill,
-                    ), */
-                  if (filePath.value != "")
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 40),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 25),
-                              child: TextWidget(
-                                "UserName",
-                                color: Colors.white,
-                                size: 15,
-                              ),
-                            ),
-                            SizedBox(
-                              // width: MediaQuery.of(context).size.width * 0.71,
-                              child: TextFormField(
-                                controller: username,
-                                // autofocus: true,
-                                validator: (value) {
-                                  if (value!.isEmpty) {
-                                    return "Please Enter username";
-                                  }
-                                  return null;
-                                },
-                                autovalidateMode:
-                                    AutovalidateMode.onUserInteraction,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                                decoration: InputDecoration(
-                                  contentPadding: const EdgeInsets.symmetric(
-                                      vertical: 0, horizontal: 10),
-                                  focusColor: Colors.white,
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.grey, width: 0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.grey, width: 0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.grey, width: 0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.grey, width: 0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height,
+            child: Stack(
+              children: [
+                ValueListenableBuilder<String>(
+                    valueListenable: filePath,
+                    builder: (context, value, _) {
+                      WidgetsBinding.instance.addPostFrameCallback(
+                        (timeStamp) {
+                          setState(() {});
+                        },
+                      );
+                      return value != ""
+                          ? Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: FileImage(File(value)),
+                                  fit: BoxFit.cover,
                                 ),
                               ),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 25),
-                              child: TextWidget(
-                                "Password",
-                                color: Colors.white,
-                                size: 15,
-                              ),
-                            ),
-                            SizedBox(
-                              // width: MediaQuery.of(context).size.width * 0.71,
-                              child: TextFormField(
-                                controller: password,
-                                // autofocus: true,
-                                validator: (value) {
-                                  if (value!.isEmpty) {
-                                    return "Please Enter username";
-                                  }
-                                  return null;
-                                },
-                                autovalidateMode:
-                                    AutovalidateMode.onUserInteraction,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                                decoration: InputDecoration(
-                                  contentPadding: const EdgeInsets.symmetric(
-                                      vertical: 0, horizontal: 10),
-                                  focusColor: Colors.white,
-                                  focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.grey, width: 0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  errorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.grey, width: 0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.grey, width: 0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.grey, width: 0.5),
-                                    borderRadius: BorderRadius.circular(5.0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.symmetric(vertical: 30),
-                              alignment: Alignment.center,
-                              child: TextButton(
-                                  style: TextButton.styleFrom(
-                                      backgroundColor: Theme.of(context)
-                                          .colorScheme
-                                          .background),
-                                  onPressed: () {
-                                    if (formKey.currentState!.validate()) {
-                                      initSanity(username.text, password.text);
-                                    }
-                                  },
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    padding:
-                                        const EdgeInsets.symmetric(vertical: 5),
-                                    width: MediaQuery.of(context).size.width *
-                                        0.85,
-                                    child: const TextWidget(
-                                      "Login",
-                                      color: Colors.purple,
-                                      size: 20,
-                                      fontweight: FontWeight.bold,
-                                    ),
-                                  )),
                             )
-                          ],
-                        ),
+                          : Container();
+                    }),
+                /*  Image.network(
+                    urlFor(picture).size(200, 200).url(),
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width,
+                    fit: BoxFit.fill,
+                  ), */
+                if (filePath.value != "")
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 40),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 25),
+                            child: TextWidget(
+                              "UserName",
+                              color: Colors.white,
+                              size: 15,
+                            ),
+                          ),
+                          SizedBox(
+                            // width: MediaQuery.of(context).size.width * 0.71,
+                            child: TextFormField(
+                              controller: username,
+                              // autofocus: true,
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return "Please Enter username";
+                                }
+                                return null;
+                              },
+                              autovalidateMode:
+                                  AutovalidateMode.onUserInteraction,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                              ),
+                              decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 0, horizontal: 10),
+                                focusColor: Colors.white,
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.grey, width: 0.5),
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.grey, width: 0.5),
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.grey, width: 0.5),
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.grey, width: 0.5),
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 25),
+                            child: TextWidget(
+                              "Password",
+                              color: Colors.white,
+                              size: 15,
+                            ),
+                          ),
+                          SizedBox(
+                            // width: MediaQuery.of(context).size.width * 0.71,
+                            child: TextFormField(
+                              controller: password,
+                              // autofocus: true,
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return "Please Enter username";
+                                }
+                                return null;
+                              },
+                              autovalidateMode:
+                                  AutovalidateMode.onUserInteraction,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                              ),
+                              decoration: InputDecoration(
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 0, horizontal: 10),
+                                focusColor: Colors.white,
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.grey, width: 0.5),
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.grey, width: 0.5),
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.grey, width: 0.5),
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                      color: Colors.grey, width: 0.5),
+                                  borderRadius: BorderRadius.circular(5.0),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(vertical: 30),
+                            alignment: Alignment.center,
+                            child: TextButton(
+                                style: TextButton.styleFrom(
+                                    backgroundColor: Theme.of(context)
+                                        .colorScheme
+                                        .background),
+                                onPressed: () {
+                                  if (formKey.currentState!.validate()) {
+                                    initSanity(username.text, password.text);
+                                  }
+                                },
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 5),
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.85,
+                                  child: const TextWidget(
+                                    "Login",
+                                    color: Colors.purple,
+                                    size: 20,
+                                    fontweight: FontWeight.bold,
+                                  ),
+                                )),
+                          )
+                        ],
                       ),
                     ),
-                ],
-              ),
+                  ),
+              ],
             ),
           ),
-        )),
-      ),
+        ),
+      )),
     );
   }
 }
