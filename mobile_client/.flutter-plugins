@@ -2,6 +2,10 @@
 file_picker=/Users/akshayas/.pub-cache/hosted/pub.dev/file_picker-3.0.4/
 flutter_plugin_android_lifecycle=/Users/akshayas/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.7/
 fluttertoast=/Users/akshayas/.pub-cache/hosted/pub.dev/fluttertoast-8.2.1/
+google_sign_in=/Users/akshayas/.pub-cache/hosted/pub.dev/google_sign_in-6.0.2/
+google_sign_in_android=/Users/akshayas/.pub-cache/hosted/pub.dev/google_sign_in_android-6.1.8/
+google_sign_in_ios=/Users/akshayas/.pub-cache/hosted/pub.dev/google_sign_in_ios-5.6.1/
+google_sign_in_web=/Users/akshayas/.pub-cache/hosted/pub.dev/google_sign_in_web-0.11.0+2/
 path_provider=/Users/akshayas/.pub-cache/hosted/pub.dev/path_provider-2.0.13/
 path_provider_android=/Users/akshayas/.pub-cache/hosted/pub.dev/path_provider_android-2.0.24/
 path_provider_foundation=/Users/akshayas/.pub-cache/hosted/pub.dev/path_provider_foundation-2.1.3/

@@ -94,6 +94,47 @@
 72-->[androidx.window:window:1.0.0-beta04] /Users/akshayas/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
 73            android:required="false" />
 73-->[androidx.window:window:1.0.0-beta04] /Users/akshayas/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
-74    </application>
-75
-76</manifest>
+74
+75        <activity
+75-->[com.google.android.gms:play-services-auth:20.4.1] /Users/akshayas/.gradle/caches/transforms-3/1e28bb4d2dfdb26a699daa556422ff6d/transformed/jetified-play-services-auth-20.4.1/AndroidManifest.xml:23:9-27:75
+76            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+76-->[com.google.android.gms:play-services-auth:20.4.1] /Users/akshayas/.gradle/caches/transforms-3/1e28bb4d2dfdb26a699daa556422ff6d/transformed/jetified-play-services-auth-20.4.1/AndroidManifest.xml:24:13-93
+77            android:excludeFromRecents="true"
+77-->[com.google.android.gms:play-services-auth:20.4.1] /Users/akshayas/.gradle/caches/transforms-3/1e28bb4d2dfdb26a699daa556422ff6d/transformed/jetified-play-services-auth-20.4.1/AndroidManifest.xml:25:13-46
+78            android:exported="false"
+78-->[com.google.android.gms:play-services-auth:20.4.1] /Users/akshayas/.gradle/caches/transforms-3/1e28bb4d2dfdb26a699daa556422ff6d/transformed/jetified-play-services-auth-20.4.1/AndroidManifest.xml:26:13-37
+79            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+79-->[com.google.android.gms:play-services-auth:20.4.1] /Users/akshayas/.gradle/caches/transforms-3/1e28bb4d2dfdb26a699daa556422ff6d/transformed/jetified-play-services-auth-20.4.1/AndroidManifest.xml:27:13-72
+80        <!--
+81            Service handling Google Sign-In user revocation. For apps that do not integrate with
+82            Google Sign-In, this service will never be started.
+83        -->
+84        <service
+84-->[com.google.android.gms:play-services-auth:20.4.1] /Users/akshayas/.gradle/caches/transforms-3/1e28bb4d2dfdb26a699daa556422ff6d/transformed/jetified-play-services-auth-20.4.1/AndroidManifest.xml:33:9-37:51
+85            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+85-->[com.google.android.gms:play-services-auth:20.4.1] /Users/akshayas/.gradle/caches/transforms-3/1e28bb4d2dfdb26a699daa556422ff6d/transformed/jetified-play-services-auth-20.4.1/AndroidManifest.xml:34:13-89
+86            android:exported="true"
+86-->[com.google.android.gms:play-services-auth:20.4.1] /Users/akshayas/.gradle/caches/transforms-3/1e28bb4d2dfdb26a699daa556422ff6d/transformed/jetified-play-services-auth-20.4.1/AndroidManifest.xml:35:13-36
+87            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+87-->[com.google.android.gms:play-services-auth:20.4.1] /Users/akshayas/.gradle/caches/transforms-3/1e28bb4d2dfdb26a699daa556422ff6d/transformed/jetified-play-services-auth-20.4.1/AndroidManifest.xml:36:13-107
+88            android:visibleToInstantApps="true" />
+88-->[com.google.android.gms:play-services-auth:20.4.1] /Users/akshayas/.gradle/caches/transforms-3/1e28bb4d2dfdb26a699daa556422ff6d/transformed/jetified-play-services-auth-20.4.1/AndroidManifest.xml:37:13-48
+89
+90        <activity
+90-->[com.google.android.gms:play-services-base:18.0.1] /Users/akshayas/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+91            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+91-->[com.google.android.gms:play-services-base:18.0.1] /Users/akshayas/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+92            android:exported="false"
+92-->[com.google.android.gms:play-services-base:18.0.1] /Users/akshayas/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+93            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+93-->[com.google.android.gms:play-services-base:18.0.1] /Users/akshayas/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+94
+95        <meta-data
+95-->[com.google.android.gms:play-services-basement:18.1.0] /Users/akshayas/.gradle/caches/transforms-3/6b0daa5fb4c2eb7e8b55778df9b972f6/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+96            android:name="com.google.android.gms.version"
+96-->[com.google.android.gms:play-services-basement:18.1.0] /Users/akshayas/.gradle/caches/transforms-3/6b0daa5fb4c2eb7e8b55778df9b972f6/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+97            android:value="@integer/google_play_services_version" />
+97-->[com.google.android.gms:play-services-basement:18.1.0] /Users/akshayas/.gradle/caches/transforms-3/6b0daa5fb4c2eb7e8b55778df9b972f6/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+98    </application>
+99
+100</manifest>
