@@ -49,6 +49,7 @@ dependencies:
   fluttertoast: ^8.2.1
   flutter_sanity_image_url: ^0.0.3
   path_provider: ^2.0.13
+  google_sign_in: ^6.0.2
   
   
   

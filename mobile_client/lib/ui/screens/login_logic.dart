@@ -15,11 +15,10 @@ class Loginlogic {
     return builder.image(asset);
   }
 
-  var picture;
   getLoginbanner() async {
     WidgetsBinding.instance.addPostFrameCallback(
       (timeStamp) async {
-        //  await getlocalloginbanner();
+        await getlocalloginbanner();
 
         // if (filePath.value == "") {
         await saveloginbanner("");
